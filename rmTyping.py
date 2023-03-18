@@ -95,4 +95,7 @@ def main(path):
     print(f"Result saved at:\n{os.path.splitext(path)[0] + '_converted.py'}")
 
 if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        print("provide a path\npython rmTyping.py path-tp-the-target-file")
+        sys.exit()
     main(sys.argv[1])
