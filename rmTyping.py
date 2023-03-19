@@ -83,8 +83,9 @@ def main(path):
 
     result:list[str] = []
     lines:list[str] = content.split("\n")
-    for line in lines:
-        #print(line)
+    totalLength:int = len(lines)
+    for i, line in enumerate(lines):
+        print(f"processing line No.{i+1} of {totalLength}")
         varRemoved:str = removeVariableDeclarationTyping(line)
         removed:str = removeFunctionDeclarationTyping(varRemoved)
         result.append(removed)
@@ -96,6 +97,6 @@ def main(path):
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        print("provide a path\npython rmTyping.py path-tp-the-target-file")
+        print("provide a path\npython rmTyping.py path-to-the-target-file")
         sys.exit()
     main(sys.argv[1])
